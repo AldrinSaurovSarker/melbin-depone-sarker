@@ -1,0 +1,13 @@
+.reviewer i {
+    border-color: var(--theme-color) !important;
+    border-radius: 50%;
+}
+
+.total-review-count {
+    text-decoration: none;
+}
+
+.total-review-count:hover {
+    color: var(--theme-hover-color) !important;
+    text-decoration: underline;
+}

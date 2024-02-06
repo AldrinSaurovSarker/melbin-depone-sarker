@@ -1,2 +1,3 @@
-react-router-dom
-bootstrap
+react-router-dom    // For configuring routes
+bootstrap           // For styling
+marked              // For parsing blog format
