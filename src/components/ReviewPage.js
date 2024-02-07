@@ -86,7 +86,7 @@ export default function ReviewPage({projects}) {
                     <div className="col-md-4 mt-5 mt-md-0">
                         <h1 className='text-theme font-5'>Our works</h1>
                         <div className='row'>
-                            <WorkList projects={projects} flag={false}/>
+                            <WorkList projects={projects} projectsPerPage={4} flag={false}/>
                         </div>
                     </div>
                 </div>
