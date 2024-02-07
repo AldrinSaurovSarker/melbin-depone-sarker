@@ -12,6 +12,7 @@ import SingleProject from "./components/SingleProject"
 import TeamList from "./components/TeamList"
 import WorkList from "./components/WorkList"
 import PackageList from "./components/PackageList"
+import ScrollUp from "./components/ScrollUp"
 
 function App() {
     const companyName = "Unique Event Solution"
@@ -33,6 +34,7 @@ function App() {
                             </div>
 
                             <Footer />
+                            <ScrollUp/>
                         </>
                     } />
 
@@ -41,6 +43,7 @@ function App() {
                             <Navbar companyName={companyName}/>
                             <SingleProject/>
                             <Footer/>
+                            <ScrollUp/>
                         </>
                     } />
                     
@@ -49,6 +52,7 @@ function App() {
                             <Navbar companyName={companyName}/>
                             <ReviewPage/>
                             <Footer/>
+                            <ScrollUp/>
                         </>
                     } />
 
@@ -57,6 +61,7 @@ function App() {
                             <Navbar companyName={companyName}/>
                             <PackageList/>
                             <Footer/>
+                            <ScrollUp/>
                         </>
                     } />
                 </Routes>

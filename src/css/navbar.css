@@ -23,3 +23,13 @@
 .navbar-nav .nav-link:focus {
     color: var(--theme-dark-color) !important;
 }
+
+.navbar-logo {
+    width: 70px;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand-centered {
+      justify-content: center !important;
+    }
+  }

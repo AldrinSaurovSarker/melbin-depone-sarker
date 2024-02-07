@@ -1,0 +1,14 @@
+.scroll-up-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ddd;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    width: 75px;
+    height: 75px;
+}
+
+.scroll-up-btn:hover {
+    opacity: 1;
+}

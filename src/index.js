@@ -5,6 +5,7 @@ import './css/carousel.css';
 import './css/navbar.css';
 import './css/package.css';
 import './css/review.css';
+import './css/scroller.css';
 import './index.css';
 
 import App from './App';
