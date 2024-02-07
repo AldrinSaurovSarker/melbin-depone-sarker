@@ -44,18 +44,24 @@ export default function ReviewList() {
             <div className="d-lg-flex">
                 <div id="carouselFade" className="col-lg-8 carousel carousel-review slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-inner h-100">
-                        {reviewsData.map((review, index) => (
-                            <div key={index} className={`carousel-item h-100 ${review.isActive ? 'active' : ''} row g-0 d-md-flex pt-5`}>
-                                <Review
-                                    title={review.title}
-                                    subtitle={review.subtitle}
-                                    reviewer={review.reviewer}
-                                    profession={review.profession}
-                                    timestamp={review.timestamp}
-                                    fullReview={false}
-                                />
-                            </div>
-                        ))}
+                        {
+                            reviewsData.length > 0 ? (
+                                reviewsData.map((review, index) => (
+                                    <div key={index} className={`carousel-item h-100 ${review.isActive ? 'active' : ''} row g-0 d-md-flex pt-5`}>
+                                        <Review
+                                            title={review.title}
+                                            subtitle={review.subtitle}
+                                            reviewer={review.reviewer}
+                                            profession={review.profession}
+                                            timestamp={review.timestamp}
+                                            fullReview={false}
+                                        />
+                                    </div>
+                                ))
+                            ) : (
+                                <h1 className='text-center text-info'>No reviews to show</h1>
+                            )
+                        }
                     </div>
 
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev">
@@ -68,9 +74,9 @@ export default function ReviewList() {
                         <span className="visually-hidden">Next</span>
                     </button>
 
-                    <Link to={linkPath} className="total-review-count text-theme fw-bold my-3 cursor-pointer">
+                    {reviewsData.length > 0 && <Link to={linkPath} className="total-review-count text-theme fw-bold my-3 cursor-pointer">
                         View all {reviewsData.length} reviews
-                    </Link>
+                    </Link>}
                 </div>
 
                 <AddReviewForm />
