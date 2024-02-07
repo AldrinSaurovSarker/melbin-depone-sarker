@@ -2,64 +2,15 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { marked } from 'marked'
 
-import WorkCard from './WorkCard'
+import WorkList from './WorkList'
 
-export default function SingleProject() {
+export default function SingleProject({projects}) {
     let { projectId } = useParams()
-
-    const works = [
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link1',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link2',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link3',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link4',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link5',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link6',
-        },
-    ];
-
-    const projectData = {
-        name: "Birthday party of Abid",
-        description: "<h3>What is event management?</h3>Event management can be defined as an art of delivery any live experience it may be a wedding, festival, corporate event, private party, sporting event, birthday party, conference or meeting.<br><br>An event manager should have creative and technical skills which are essential for the creation of the required environment.<br><br>According to the Wikipedia, event management is “the application of project management to the creation and development of large-scale events. It involves studying the brand, identifying the target audience, devising the event concept, planning the logistics, and coordinating the technical aspects before actually launching the event”…which is very accurate.<br><br>Here are 10 basic principles of event management.",
-        postedOn: "January 1, 2024",
-        images: [
-            "em1.jpg",
-            "em2.jpg",
-            "em3.jpg",
-        ]
-    }
+    const projectData = projects[projectId]
 
     const overlayColor = 'rgba(0, 0, 0, 0.5)'
 
-    const folderName = projectData.name
+    const folderName = projectData.title
     const encodedFolderName = encodeURIComponent(folderName)
     const PROJECT_IMAGE_DIR = `/image/projects/${encodedFolderName}`
 
@@ -87,7 +38,7 @@ export default function SingleProject() {
         <div className="container-fluid">
             <div className="text-white text-center p-5 overlay-bg" style={coverStyle}>
                 <div className="overlay-shade" style={overlay}>
-                    <h1 className='text-uppercase fw-bold font-1 p-5'>{projectData.name}</h1>
+                    <h1 className='text-uppercase fw-bold font-1 p-5'>{projectData.title}</h1>
                 </div>
             </div>
 
@@ -95,7 +46,8 @@ export default function SingleProject() {
             <div className='container'>
                 <div className="row mt-5 pt-5">
                     <div className="col-md-8">
-                        <h1 className='text-theme font-5 mb-5'>{projectData.name}</h1>
+                        <h1 className='text-theme font-5'>{projectData.title}</h1>
+                        <div className="font-4">Tag <span className="badge bg-info text-dark mb-5">{projectData.tag}</span></div>
                         <div className="font-1 text-justify" dangerouslySetInnerHTML={getMarkdownText()} />
                         <p><strong className='text-theme'>Posted on:</strong> {projectData.postedOn}</p>
 
@@ -128,17 +80,7 @@ export default function SingleProject() {
                     <div className="col-md-4 mt-5 mt-md-0">
                         <h1 className='text-theme font-5'>Related Posts</h1>
                         <div className='row'>
-                            {works.map((work, index) => (
-                                <WorkCard
-                                    key={index}
-                                    imageUrl={work.imageUrl}
-                                    title={work.title}
-                                    subtitle={work.subtitle}
-                                    viewLink={work.viewLink}
-                                    order={index}
-                                    flag={false}
-                                />
-                            ))}
+                            <WorkList projects={projects} flag={false}/>
                         </div>
                     </div>
                 </div>

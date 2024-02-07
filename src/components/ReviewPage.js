@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 
 import Review from './Review'
 import SectionHeader from './SectionHeader'
-import WorkCard from './WorkCard'
+import WorkList from './WorkList'
 
-export default function ReviewPage() {
+export default function ReviewPage({projects}) {
     let { projectId } = useParams()
 
     const reviewsData = [
@@ -34,45 +34,6 @@ export default function ReviewPage() {
             isActive: false
         }
     ]
-
-    const works = [
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link1',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link2',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link3',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link4',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link5',
-        },
-        {
-            imageUrl: 'https://64.media.tumblr.com/34277777b4c886320bfc76a30675d921/tumblr_inline_o5adfjLAPd1safd2x_1280.jpg',
-            title: 'Project Title 1',
-            subtitle: 'Project subtitle or brief info 1',
-            viewLink: 'link6',
-        },
-    ];
 
     const overlayColor = 'rgba(0, 0, 0, 0.5)'
 
@@ -125,18 +86,7 @@ export default function ReviewPage() {
                     <div className="col-md-4 mt-5 mt-md-0">
                         <h1 className='text-theme font-5'>Our works</h1>
                         <div className='row'>
-                            {works.map((work, index) => (
-                                <div key={index}>
-                                    <WorkCard
-                                        imageUrl={work.imageUrl}
-                                        title={work.title}
-                                        subtitle={work.subtitle}
-                                        viewLink={work.viewLink}
-                                        order={index}
-                                        flag={false}
-                                    />
-                                </div>
-                            ))}
+                            <WorkList projects={projects} flag={false}/>
                         </div>
                     </div>
                 </div>
