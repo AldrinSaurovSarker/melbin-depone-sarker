@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Review from './Review'
+import SectionHeader from './SectionHeader'
 import WorkCard from './WorkCard'
 
 export default function ReviewPage() {
@@ -102,6 +103,10 @@ export default function ReviewPage() {
             <div className='container'>
                 <div className="row mt-5 pt-5">
                     <div className="col-md-8">
+                        <SectionHeader
+                            title="What our customers think about us"
+                            subtitle="That’s the main thing people are controlled by! Thoughts- their perception of themselves!"
+                        />
                         {reviewsData.map((review, index) => (
                             <div key={index} className='my-5'>
                                 <Review
@@ -117,7 +122,7 @@ export default function ReviewPage() {
 
                     {/* Sidebar */}
                     <div className="col-md-4 mt-5 mt-md-0">
-                        <h3 className='text-theme'>Related Posts</h3>
+                        <h1 className='text-theme font-5'>Our works</h1>
                         <div className='row'>
                             {works.map((work, index) => (
                                 <div key={index}>

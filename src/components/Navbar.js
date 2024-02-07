@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Navbar({ companyName }) {
     let navigate = useNavigate();
 
     const handleNavigate = (sectionId) => {
@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className="container-fluid">
                 <a className="navbar-brand d-sm-flex align-items-center cursor-pointer" onClick={() => handleNavigate('')}>
                     <img src="/image/logo.jpg" alt="Logo" style={{ width: '70px', marginRight: '10px' }} />
-                    <h1 className="text-theme text-uppercase text-adjustable fw-bolder font-2">Unique Event Solution</h1>
+                    <h1 className="text-theme text-uppercase text-adjustable fw-bolder font-2">{companyName}</h1>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

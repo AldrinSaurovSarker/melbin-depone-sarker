@@ -10,6 +10,22 @@ export default function TeamList() {
             phone: "+8801642005775",
             whatsapp: "https://api.whatsapp.com/send/?phone=8801642005775&text&type=phone_number&app_absent=0",
             facebook: "https://www.facebook.com/aldrinsaurovsarker/"
+        },
+        {
+            name: "Dua Lipa",
+            designation: "CEO",
+            imageUrl: 'https://i1.sndcdn.com/artworks-9AztcnYMqDy2pncD-7W2KRw-t500x500.jpg',
+            phone: "+8801642005775",
+            whatsapp: "https://api.whatsapp.com/send/?phone=8801642005775&text&type=phone_number&app_absent=0",
+            facebook: "https://www.facebook.com/aldrinsaurovsarker/"
+        },
+        {
+            name: "Dua Lipa",
+            designation: "CEO",
+            imageUrl: 'https://i1.sndcdn.com/artworks-9AztcnYMqDy2pncD-7W2KRw-t500x500.jpg',
+            phone: "+8801642005775",
+            whatsapp: "https://api.whatsapp.com/send/?phone=8801642005775&text&type=phone_number&app_absent=0",
+            facebook: "https://www.facebook.com/aldrinsaurovsarker/"
         }
     ]
     

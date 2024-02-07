@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import './css/carousel.css';
 import './css/navbar.css';
+import './css/package.css';
 import './css/review.css';
 import './index.css';
 

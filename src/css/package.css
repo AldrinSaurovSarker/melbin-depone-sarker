@@ -1,0 +1,15 @@
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+}
+
+.package-item {
+    min-height: 60vh !important;
+    transition: all 0.3s;
+}
+
+.package-item:hover {
+    transform: translateY(-5px);
+    box-shadow: inset 0px 0px 5px var(--theme-active-color) !important;
+}

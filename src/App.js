@@ -11,6 +11,7 @@ import ReviewPage from "./components/ReviewPage"
 import SingleProject from "./components/SingleProject"
 import TeamList from "./components/TeamList"
 import WorkList from "./components/WorkList"
+import PackageList from "./components/PackageList"
 
 function App() {
     const companyName = "Unique Event Solution"
@@ -21,7 +22,7 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={
                         <>
-                            <Navbar />
+                            <Navbar companyName={companyName}/>
                             <Intro url="https://media1.popsugar-assets.com/files/thumbor/xY3BdKypxx5-xtLazUhzPoO3S7M/0x0:3085x3085/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2022/12/07/019/n/1922153/6cad0ab66391218092c254.74357738_/i/jenna-ortega-beauty-looks.jpg" companyName={companyName} />
 
                             <div className="container">
@@ -37,7 +38,7 @@ function App() {
 
                     <Route path="/project/:projectId" element={
                         <>
-                            <Navbar/>
+                            <Navbar companyName={companyName}/>
                             <SingleProject/>
                             <Footer/>
                         </>
@@ -45,7 +46,7 @@ function App() {
                     
                     <Route path="/reviews" element={
                         <>
-                            <Navbar/>
+                            <Navbar companyName={companyName}/>
                             <ReviewPage/>
                             <Footer/>
                         </>
@@ -53,8 +54,8 @@ function App() {
 
                     <Route path="/packages" element={
                         <>
-                            <Navbar/>
-                            
+                            <Navbar companyName={companyName}/>
+                            <PackageList/>
                             <Footer/>
                         </>
                     } />

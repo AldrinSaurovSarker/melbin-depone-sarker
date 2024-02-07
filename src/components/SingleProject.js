@@ -95,7 +95,7 @@ export default function SingleProject() {
             <div className='container'>
                 <div className="row mt-5 pt-5">
                     <div className="col-md-8">
-                        <h2 className='text-theme mb-5'>{projectData.name}</h2>
+                        <h1 className='text-theme font-5 mb-5'>{projectData.name}</h1>
                         <div className="font-1 text-justify" dangerouslySetInnerHTML={getMarkdownText()} />
                         <p><strong className='text-theme'>Posted on:</strong> {projectData.postedOn}</p>
 
@@ -126,7 +126,7 @@ export default function SingleProject() {
 
                     {/* Sidebar */}
                     <div className="col-md-4 mt-5 mt-md-0">
-                        <h3 className='text-theme'>Related Posts</h3>
+                        <h1 className='text-theme font-5'>Related Posts</h1>
                         <div className='row'>
                             {works.map((work, index) => (
                                 <WorkCard
