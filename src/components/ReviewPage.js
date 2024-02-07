@@ -11,7 +11,7 @@ export default function ReviewPage() {
     const reviewsData = [
         {
             title: "Winter is coming",
-            subtitle: "Tell them, the North Remembers",
+            subtitle: "Collaboration is the heart of event planning, and this system facilitates it beautifully. With built-in tools for team communication, task assignments, and progress tracking, it fosters a collaborative environment that boosts productivity and ensures nothing falls through the cracks. Furthermore, the attendee engagement tools, such as personalized schedules and interactive event maps, enhance the overall experience for participants, making each event memorable.",
             reviewer: "Maisie Williams",
             profession: "Actress",
             timestamp: "15:23 August 14, 2022",
@@ -19,7 +19,7 @@ export default function ReviewPage() {
         },
         {
             title: "Excellent! Awesome service",
-            subtitle: "you are the shadow to my light did you feel us? another start you fade away",
+            subtitle: "In the few instances where I encountered challenges or had questions, the support team was responsive, knowledgeable, and genuinely eager to help. Their commitment to customer satisfaction is evident, providing peace of mind that you have a reliable partner in your event planning journey.",
             reviewer: "Jenna Ortega",
             profession: "Actress",
             timestamp: "11:11 November 11, 2022",
@@ -115,6 +115,7 @@ export default function ReviewPage() {
                                     reviewer={review.reviewer}
                                     profession={review.profession}
                                     timestamp={review.timestamp}
+                                    fullReview={true}
                                 />
                             </div>
                         ))}

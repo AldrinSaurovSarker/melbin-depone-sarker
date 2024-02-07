@@ -18,7 +18,12 @@ export default function AddReviewForm() {
                         </div>
 
                         <div className="mb-3">
-                            <label htmlFor="userReview" className="form-label text-variant text-theme fw-bold">Review</label>
+                            <label htmlFor="title" className="form-label text-variant text-theme fw-bold">Review Title</label>
+                            <input type="text" className="form-control" id="title" placeholder="Enter a title for the review" />
+                        </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="userReview" className="form-label text-variant text-theme fw-bold">Review Description</label>
                             <textarea className="form-control" id="userReview" rows="3" placeholder="Write your review here"></textarea>
                         </div>
 
