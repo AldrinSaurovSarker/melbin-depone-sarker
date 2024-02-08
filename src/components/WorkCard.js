@@ -14,7 +14,7 @@ export default function WorkCard({ project, order, flag }) {
     const overlayColor = overlayColors[order % 3]
 
     const cardStyle = {
-        backgroundImage: `url(${PROJECT_IMAGE_DIR}/${project.images[0]})`,
+        backgroundImage: project.images && project.images.length > 0 ? `url(${PROJECT_IMAGE_DIR}/${project.images[0]})` : 'none',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '300px'

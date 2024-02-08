@@ -9,13 +9,15 @@ export default function WorkList({ projects, projectsPerPage, flag }) {
     const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
     const totalPages = Math.ceil(projects.length / projectsPerPage);
+    const placeholdersCount = currentProjects.length < projectsPerPage ? projectsPerPage - currentProjects.length : 0;
 
     const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
     }
+
+    const visibilityStyle = { visibility: 'hidden' }
 
     return (
         <>
@@ -27,6 +29,17 @@ export default function WorkList({ projects, projectsPerPage, flag }) {
                         order={indexOfFirstProject + index}
                         flag={flag}
                     />
+                ))}
+                {Array.from({ length: placeholdersCount }, (_, index) => (
+                    <div style={visibilityStyle} key={`placeholder-${index}`} className={`${flag ? 'col-md-4' : ''} work-card mb-4 placeholder`}>
+                        <WorkCard
+                            key={index}
+                            project={{}}
+                            order={indexOfFirstProject + index}
+                            flag={flag}
+                            placeholder={true}
+                        />
+                    </div>
                 ))}
             </div>
             <nav className='d-flex align-items-center justify-content-center'>
